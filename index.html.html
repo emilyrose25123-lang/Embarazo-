@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_standard" name="shell-type"/>
+<title>Portal Integral Interactivo: Embarazo, Ciclos, Métodos y Tecnología</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+    }
+    ::-webkit-scrollbar { display: none; }
+    .tab-content-active { display: flex !important; animation: fadeInTab 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+    @keyframes fadeInTab {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#4d2ea7",
+            "primary-container": "#6549c0",
+            "primary-fixed": "#e7deff",
+            "primary-fixed-dim": "#ccbdff",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#ded3ff",
+            "on-primary-fixed": "#1f005f",
+            "on-primary-fixed-variant": "#4c2ea6",
+            "secondary": "#b12d1e",
+            "secondary-container": "#fd634e",
+            "secondary-fixed": "#ffdad4",
+            "secondary-fixed-dim": "#ffb4a8",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#640200",
+            "on-secondary-fixed": "#410100",
+            "on-secondary-fixed-variant": "#8e1208",
+            "tertiary": "#005141",
+            "tertiary-container": "#056b57",
+            "tertiary-fixed": "#9ff3d9",
+            "tertiary-fixed-dim": "#84d6bd",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-container": "#96e8cf",
+            "on-tertiary-fixed": "#002019",
+            "on-tertiary-fixed-variant": "#005141",
+            "surface": "#fdf7ff",
+            "surface-dim": "#dfd6ec",
+            "surface-bright": "#fdf7ff",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f8f1ff",
+            "surface-container": "#f3eaff",
+            "surface-container-high": "#ede5fa",
+            "surface-container-highest": "#e7dff4",
+            "on-surface": "#1d1928",
+            "on-surface-variant": "#484553",
+            "outline": "#797584",
+            "outline-variant": "#cac4d5",
+            "border-subtle": "#E5E2F0",
+            "surface-subtle": "#ECECFF",
+            "accent-mint-light": "#E6F4F1",
+            "accent-salmon-light": "#FBEAE7",
+            "error": "#ba1a1a",
+            "error-container": "#ffdad6",
+            "on-error": "#ffffff",
+            "on-error-container": "#93000a"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2.5rem",
+            "space-2xl": "4rem",
+            "gutter": "1.5rem"
+          },
+          fontFamily: {
+            "body": ["Plus Jakarta Sans", "sans-serif"],
+            "headline": ["Plus Jakarta Sans", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- ======================================================== -->
+<!-- HEADER PRINCIPAL NAVEGABLE CON DATA-TAB                   -->
+<!-- ======================================================== -->
+<header class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-xl border-b border-border-subtle shadow-[0_1px_12px_rgba(77,46,167,0.06)]">
+<div class="h-20 max-w-[1240px] mx-auto px-gutter flex items-center justify-between gap-space-md">
+<!-- Logo y Nombre -->
+<a class="flex items-center gap-space-sm group cursor-pointer shrink-0" href="javascript:void(0)" onclick="switchAppTab('embarazo')">
+<div class="w-11 h-11 rounded-full bg-surface-container flex items-center justify-center p-1 shadow-sm group-hover:scale-105 transition-transform overflow-hidden">
+<img alt="Logo Embarazo y Adolescencia" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VcwkRtw8ilqeRkAzgkQbSRoSIJ2ek2OlD-1ZwWRN9FG7Ozchv_r8k71G0TQpHqp1moHPiDesYA2qqdaj7Le4STr6OG7eXs0Yll075LTUyb_LVm1sqPgQ76KhZCXqVlKDViEmwDLb6fPBw-BQl7-zUgvBp9hjrQRP7_PV4-p8aLrCpBfpHEhs77CKZclFQaMomVhoa5anecQHMbYftvIVOQIuPd939rFvzizKclTyGAihS9p9oK6Wiezso"/>
+</div>
+<div class="flex flex-col">
+<span class="font-bold text-[17px] text-primary leading-tight tracking-tight">Embarazo y Adolescencia</span>
+<span class="text-[11px] text-on-surface-variant uppercase tracking-wider font-semibold">Salud Integral Joven</span>
+</div>
+</a>
+<!-- Navegación Superior Desktop con data-tab -->
+<nav class="hidden xl:flex items-center gap-1 p-1.5 bg-surface-subtle rounded-full border border-border-subtle" id="navHeader">
+<button class="header-tab-btn px-4 py-2 rounded-full text-[13px] font-bold transition-all bg-primary text-on-primary shadow-[0_2px_10px_rgba(77,46,167,0.25)]" data-tab="embarazo" onclick="switchAppTab('embarazo')">
+          Embarazo y Riesgos
+        </button>
+<button class="header-tab-btn px-4 py-2 rounded-full text-[13px] font-semibold text-on-surface-variant hover:text-primary transition-all" data-tab="ciclos" onclick="switchAppTab('ciclos')">
+          Ciclos Menstruales
+        </button>
+<button class="header-tab-btn px-4 py-2 rounded-full text-[13px] font-semibold text-on-surface-variant hover:text-primary transition-all" data-tab="metodos" onclick="switchAppTab('metodos')">
+          Métodos Anticonceptivos
+        </button>
+<button class="header-tab-btn px-4 py-2 rounded-full text-[13px] font-semibold text-on-surface-variant hover:text-primary transition-all" data-tab="tecnologia" onclick="switchAppTab('tecnologia')">
+          Tecnología &amp; Sexting
+        </button>
+<button class="header-tab-btn px-4 py-2 rounded-full text-[13px] font-semibold text-on-surface-variant hover:text-primary transition-all" data-tab="mitos" onclick="switchAppTab('mitos')">
+          Mitos vs Realidades
+        </button>
+</nav>
+<!-- Botones de Acción Derecha -->
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary text-on-secondary text-[13px] font-bold shadow-sm hover:brightness-110 active:scale-95 transition-all" onclick="openModalSOS()">
+<span class="material-symbols-outlined text-[19px] animate-pulse">emergency</span>
+<span class="hidden sm:inline">Línea Confidencial / SOS</span>
+<span class="sm:hidden">SOS</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-colors" onclick="openModalSOS()" title="Asistencia Médica Confidencial">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+</button>
+</div>
+</div>
+</header>
+<!-- ======================================================== -->
+<!-- SUB-BARRA DE PESTAÑAS STICKY CON SCROLL HORIZONTAL        -->
+<!-- ======================================================== -->
+<section class="w-full bg-surface-container-low/95 backdrop-blur-md py-2.5 shadow-sm sticky top-20 z-40 border-b border-border-subtle">
+<div class="max-w-[1240px] mx-auto px-gutter flex flex-col md:flex-row items-center justify-between gap-space-sm">
+<div class="flex items-center gap-1.5 overflow-x-auto w-full md:w-auto p-1 bg-surface-subtle rounded-full scrollbar-none" id="subTabBar">
+<button class="sub-tab-btn px-4 py-1.5 rounded-full text-[13px] font-bold transition-all flex items-center gap-2 whitespace-nowrap bg-primary text-on-primary shadow-sm" data-tab="embarazo" onclick="switchAppTab('embarazo')">
+<span class="material-symbols-outlined text-[18px]">medical_services</span>
+<span>Embarazo y Riesgos</span>
+</button>
+<button class="sub-tab-btn px-4 py-1.5 rounded-full text-[13px] font-semibold text-on-surface-variant hover:text-primary transition-all flex items-center gap-2 whitespace-nowrap" data-tab="ciclos" onclick="switchAppTab('ciclos')">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+<span>Ciclos Menstruales</span>
+</button>
+<button class="sub-tab-btn px-4 py-1.5 rounded-full text-[13px] font-semibold text-on-surface-variant hover:text-primary transition-all flex items-center gap-2 whitespace-nowrap" data-tab="metodos" onclick="switchAppTab('metodos')">
+<span class="material-symbols-outlined text-[18px]">shield</span>
+<span>Métodos Anticonceptivos</span>
+</button>
+<button class="sub-tab-btn px-4 py-1.5 rounded-full text-[13px] font-semibold text-on-surface-variant hover:text-primary transition-all flex items-center gap-2 whitespace-nowrap" data-tab="tecnologia" onclick="switchAppTab('tecnologia')">
+<span class="material-symbols-outlined text-[18px]">phonelink_lock</span>
+<span>Tecnología &amp; Sexting</span>
+</button>
+<button class="sub-tab-btn px-4 py-1.5 rounded-full text-[13px] font-semibold text-on-surface-variant hover:text-primary transition-all flex items-center gap-2 whitespace-nowrap" data-tab="mitos" onclick="switchAppTab('mitos')">
+<span class="material-symbols-outlined text-[18px]">fact_check</span>
+<span>Mitos vs Realidades</span>
+</button>
+</div>
+<!-- Alerta / Píldora de Privacidad Rápida -->
+<div class="hidden lg:flex items-center gap-2 text-xs font-semibold text-tertiary bg-accent-mint-light px-3 py-1.5 rounded-full border border-tertiary-fixed">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span>Navegación 100% Anónima y Segura</span>
+</div>
+</div>
+</section>
+<!-- ======================================================== -->
+<!-- CONTENEDOR PRINCIPAL DE PESTAÑAS                          -->
+<!-- ======================================================== -->
+<main class="w-full min-h-screen bg-surface pb-16">
+<!-- ======================================================== -->
+<!-- PESTAÑA 1: EMBARAZO Y RIESGOS (TAB 'embarazo')           -->
+<!-- ======================================================== -->
+<section class="tab-pane tab-content-active flex-col w-full max-w-[1240px] mx-auto px-gutter py-space-xl" id="pane-embarazo">
+<!-- Hero Header -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start pb-space-2xl">
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<div class="inline-flex items-center gap-2 self-start px-3 py-1 rounded-full bg-surface-container text-primary text-[12px] font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px]">info</span>
+<span>Guía de Concientización Médica y Social</span>
+</div>
+<h1 class="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-on-surface leading-[1.18] tracking-tight">
+            La realidad del embarazo en la adolescencia: 
+            <span class="text-secondary">Riesgos físicos</span>, 
+            <span class="text-primary">emocionales</span> y tu proyecto de vida
+          </h1>
+<p class="text-base sm:text-lg text-on-surface-variant max-w-2xl leading-relaxed">
+            Tomar decisiones informadas es tu derecho fundamental. Analizamos con rigor científico y sin juzgar los efectos en tu cuerpo, mente y futuro personal para que construyas tu vida en tus propios términos.
+          </p>
+<div class="flex flex-wrap items-center gap-space-sm pt-space-xs">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent-mint-light text-tertiary text-xs font-semibold">
+<span class="material-symbols-outlined text-[16px]">verified</span> Evidencia OMS Actualizada
+            </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent-salmon-light text-secondary text-xs font-semibold">
+<span class="material-symbols-outlined text-[16px]">health_and_safety</span> Enfoque de Derechos
+            </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-subtle text-primary text-xs font-semibold">
+<span class="material-symbols-outlined text-[16px]">school</span> Educación Sexual Integral
+            </span>
+</div>
+</div>
+<!-- Tarjeta de Estadísticas OMS -->
+<div class="lg:col-span-4 bg-surface-container-low rounded-2xl p-space-lg shadow-sm border border-border-subtle flex flex-col gap-space-md">
+<div class="flex items-center gap-2 text-secondary font-bold text-base">
+<span class="material-symbols-outlined text-[24px]">warning</span>
+<span>Evidencia de Salud Pública (OMS)</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm border border-border-subtle flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-xs text-on-surface-variant font-bold uppercase tracking-wider">Riesgo materno &lt;15 años</span>
+<span class="text-xs text-outline">Complicaciones críticas</span>
+</div>
+<span class="text-2xl font-black text-secondary tracking-tight">2x a 4x</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm border border-border-subtle flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-xs text-on-surface-variant font-bold uppercase tracking-wider">Deserción escolar</span>
+<span class="text-xs text-outline">Impacto formativo directo</span>
+</div>
+<span class="text-2xl font-black text-primary tracking-tight">~68%</span>
+</div>
+<p class="text-[11px] text-outline text-right italic pt-1">
+            Fuente: Informes Globales de Salud Reproductiva y Juventud.
+          </p>
+</div>
+</div>
+<!-- Cuatro Dimensiones del Impacto -->
+<div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-space-md pb-space-lg">
+<div class="flex flex-col gap-1">
+<span class="text-xs text-primary uppercase tracking-widest font-extrabold">Matriz Multidimensional</span>
+<h2 class="text-2xl sm:text-3xl font-extrabold text-on-surface">Cuatro Dimensiones del Impacto</h2>
+</div>
+<p class="text-sm text-on-surface-variant max-w-md">
+          Un embarazo temprano trasciende lo biológico: transforma la cotidianidad afectiva, el desarrollo cognitivo y el acceso a oportunidades formativas.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg pb-space-2xl">
+<!-- Dimensión 1 -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm border border-border-subtle hover:shadow-md transition-all flex flex-col justify-between overflow-hidden">
+<div class="p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded-full bg-accent-salmon-light text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">medical_services</span>
+</div>
+<span class="px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant text-xs font-bold">
+                DIMENSIÓN 01 · ALERTA CLÍNICA
+              </span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-on-surface pb-1">Riesgos Físicos y de Salud Biológica</h3>
+<p class="text-sm text-on-surface-variant">
+                El aparato reproductor y óseo aún se encuentran en fase de maduración. Un embarazo genera sobreexigencias fisiológicas críticas para las que el cuerpo adolescente no está preparado:
+              </p>
+</div>
+<ul class="flex flex-col gap-space-sm text-sm text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary shrink-0 mt-0.5">crisis_alert</span>
+<div><strong class="text-on-surface">Preeclampsia y eclampsia severa:</strong> Elevación súbita de presión arterial que puede poner en riesgo inmediato la vida.</div>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary shrink-0 mt-0.5">bloodtype</span>
+<div><strong class="text-on-surface">Anemia grave y deficiencias:</strong> Competición biológica entre el feto en desarrollo y los requerimientos del crecimiento propio.</div>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary shrink-0 mt-0.5">pregnancy</span>
+<div><strong class="text-on-surface">Parto obstruido por inmadurez pélvica:</strong> Mayor necesidad de cesáreas de urgencia e incremento de lesiones obstétricas.</div>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary shrink-0 mt-0.5">child_care</span>
+<div><strong class="text-on-surface">Vulnerabilidad neonatal:</strong> Elevadas tasas de prematuridad y bajo peso al nacer.</div>
+</li>
+</ul>
+</div>
+<div class="px-space-lg py-3 bg-surface-container-low flex items-center gap-2 text-on-surface-variant text-xs font-medium border-t border-border-subtle">
+<span class="material-symbols-outlined text-[16px] text-tertiary">verified</span>
+<span>Fuente: Protocolo Clínico de Obstetricia Adolescente OMS</span>
+</div>
+</div>
+<!-- Dimensión 2 -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm border border-border-subtle hover:shadow-md transition-all flex flex-col justify-between overflow-hidden">
+<div class="p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded-full bg-surface-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">school</span>
+</div>
+<span class="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-xs font-bold">
+                DIMENSIÓN 02 · IMPACTO FORMATIVO
+              </span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-on-surface pb-1">Impacto en el Proyecto de Vida y Educación</h3>
+<p class="text-sm text-on-surface-variant">
+                La trayectoria vocacional y el horizonte personal suelen frenarse abruptamente al asumir responsabilidades económicas tempranas sin el sustento adecuado:
+              </p>
+</div>
+<ul class="flex flex-col gap-space-sm text-sm text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary shrink-0 mt-0.5">cancel_presentation</span>
+<div><strong class="text-on-surface">Deserción escolar acelerada:</strong> Dificultad para compatibilizar la crianza continua con el calendario y exigencias educativas diarias.</div>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary shrink-0 mt-0.5">work_off</span>
+<div><strong class="text-on-surface">Brecha laboral precaria:</strong> Inserción en empleos no calificados, informales y sin cobertura de seguridad social.</div>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary shrink-0 mt-0.5">lock_clock</span>
+<div><strong class="text-on-surface">Dependencia económica crónica:</strong> Subordinación financiera al núcleo parental o a la pareja, limitando la autonomía.</div>
+</li>
+</ul>
+</div>
+<div class="px-space-lg py-3 bg-surface-container-low flex items-center gap-2 text-on-surface-variant text-xs font-medium border-t border-border-subtle">
+<span class="material-symbols-outlined text-[16px] text-primary">menu_book</span>
+<span>Garantía legal: Derecho de permanencia escolar y apoyo materno protegido</span>
+</div>
+</div>
+<!-- Dimensión 3 -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm border border-border-subtle hover:shadow-md transition-all flex flex-col justify-between overflow-hidden">
+<div class="p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded-full bg-accent-mint-light text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">psychology</span>
+</div>
+<span class="px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant text-xs font-bold">
+                DIMENSIÓN 03 · SALUD MENTAL
+              </span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-on-surface pb-1">Desafíos Psicológicos y Emocionales</h3>
+<p class="text-sm text-on-surface-variant">
+                La adolescencia es una etapa de consolidación de la propia identidad. La paternidad o maternidad no planificada detona un choque cognitivo profundo:
+              </p>
+</div>
+<ul class="flex flex-col gap-space-sm text-sm text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary shrink-0 mt-0.5">sentiment_dissatisfied</span>
+<div><strong class="text-on-surface">Depresión posparto juvenil y ansiedad:</strong> Niveles altos de estrés ante la vivencia del cambio radical de rol social y exigencias.</div>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary shrink-0 mt-0.5">heart_broken</span>
+<div><strong class="text-on-surface">Aislamiento emocional:</strong> Sensación de desconexión de los pares generacionales y pérdida de espacios lúdicos.</div>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary shrink-0 mt-0.5">visibility_off</span>
+<div><strong class="text-on-surface">Estigma social y culpa inducida:</strong> Juicios morales procedentes del entorno cercano, comunidad o redes.</div>
+</li>
+</ul>
+</div>
+<div class="px-space-lg py-3 bg-surface-container-low flex items-center gap-2 text-on-surface-variant text-xs font-medium border-t border-border-subtle">
+<span class="material-symbols-outlined text-[16px] text-tertiary">volunteer_activism</span>
+<span>Atención con psicoterapia juvenil gratuita disponible</span>
+</div>
+</div>
+<!-- Dimensión 4 -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm border border-border-subtle hover:shadow-md transition-all flex flex-col justify-between overflow-hidden">
+<div class="p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">groups</span>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface-variant text-on-surface text-xs font-bold">
+                DIMENSIÓN 04 · VÍNCULOS
+              </span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-on-surface pb-1">Impacto Social y Relacional</h3>
+<p class="text-sm text-on-surface-variant">
+                Los vínculos familiares y afectivos se reorganizan bajo alta tensión emocional, alterando la red de contención:
+              </p>
+</div>
+<ul class="flex flex-col gap-space-sm text-sm text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary shrink-0 mt-0.5">family_restroom</span>
+<div><strong class="text-on-surface">Crisis y conflictos intrafamiliares:</strong> Fricción, reproches o rupturas temporales con padres o tutores.</div>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary shrink-0 mt-0.5">group_remove</span>
+<div><strong class="text-on-surface">Pérdida de la red de amistades:</strong> Distanciamiento progresivo al no compartir rutinas ni intereses con su grupo etario.</div>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary shrink-0 mt-0.5">escalator_warning</span>
+<div><strong class="text-on-surface">Uniones tempranas forzadas:</strong> Presión familiar para matrimonios o convivencias no deseadas que vulneran los derechos.</div>
+</li>
+</ul>
+</div>
+<div class="px-space-lg py-3 bg-surface-container-low flex items-center gap-2 text-on-surface-variant text-xs font-medium border-t border-border-subtle">
+<span class="material-symbols-outlined text-[16px] text-primary">gavel</span>
+<span>Tus derechos civiles y de alimentos están garantizados por la ley</span>
+</div>
+</div>
+</div>
+<!-- Comparativa Fisiológica: Visual Split -->
+<div class="bg-surface-container-low rounded-2xl p-space-lg md:p-space-xl flex flex-col gap-space-xl shadow-sm border border-border-subtle mb-space-2xl">
+<div class="text-center max-w-2xl mx-auto flex flex-col gap-1">
+<span class="text-xs text-primary uppercase font-extrabold tracking-widest">Fisiología Comparada</span>
+<h2 class="text-2xl font-extrabold text-on-surface">Cuerpo Adolescente vs. Exigencias del Embarazo</h2>
+<p class="text-sm text-on-surface-variant">
+            Comprender qué ocurre anatómicamente desmitifica los riesgos: la naturaleza del crecimiento humano requiere etapas de maduración antes de sustentar otra vida.
+          </p>
+</div>
+<div class="relative grid grid-cols-1 md:grid-cols-2 gap-space-lg items-stretch">
+<!-- Adolescente -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm border border-border-subtle flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-subtle text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">face</span>
+</div>
+<div>
+<h3 class="text-base font-bold text-on-surface">Adolescente en Crecimiento</h3>
+<span class="text-xs text-primary font-medium">En proceso de consolidación biológica</span>
+</div>
+</div>
+<div class="bg-surface rounded-lg p-space-md flex flex-col gap-1 border border-border-subtle">
+<span class="font-bold text-sm text-on-surface">Estructura Ósea y Pélvica</span>
+<p class="text-xs text-on-surface-variant">El canal de parto y los huesos ilíacos continúan su remodelación hasta los 18-20 años. El estrecho pélvico no ha alcanzado su diámetro definitivo.</p>
+</div>
+<div class="bg-surface rounded-lg p-space-md flex flex-col gap-1 border border-border-subtle">
+<span class="font-bold text-sm text-on-surface">Metabolismo y Nutrición</span>
+<p class="text-xs text-on-surface-variant">El cuerpo necesita todo su calcio, hierro y reservas energéticas para su propio estirón puberal, desarrollo cerebral y masa muscular.</p>
+</div>
+<div class="bg-surface rounded-lg p-space-md flex flex-col gap-1 border border-border-subtle">
+<span class="font-bold text-sm text-on-surface">Sistema Cardiovascular y Endócrino</span>
+<p class="text-xs text-on-surface-variant">Regulación hormonal en fase de adaptación con ciclos ovulatorios frecuentemente anovulatorios y vascularización uterina aún inmadura.</p>
+</div>
+</div>
+<!-- Gestación -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm border border-border-subtle flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-accent-salmon-light text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">monitor_heart</span>
+</div>
+<div>
+<h3 class="text-base font-bold text-on-surface">Exigencias de la Gestación</h3>
+<span class="text-xs text-secondary font-medium">Demanda extrema para el organismo</span>
+</div>
+</div>
+<div class="bg-surface rounded-lg p-space-md flex flex-col gap-1 border border-border-subtle">
+<span class="font-bold text-sm text-on-surface">Volumen Cardíaco y Plasmático</span>
+<p class="text-xs text-on-surface-variant">El volumen de sangre aumenta en un 40–50%, duplicando el esfuerzo cardíaco y aumentando la propensión a hipertensión reactiva y preeclampsia.</p>
+</div>
+<div class="bg-surface rounded-lg p-space-md flex flex-col gap-1 border border-border-subtle">
+<span class="font-bold text-sm text-on-surface">Drenaje de Minerales</span>
+<p class="text-xs text-on-surface-variant">El feto extrae prioritariamente calcio óseo materno y reservas de ferritina, deteniendo la adquisición de masa ósea máxima en la adolescente.</p>
+</div>
+<div class="bg-surface rounded-lg p-space-md flex flex-col gap-1 border border-border-subtle">
+<span class="font-bold text-sm text-on-surface">Inflexibilidad Pélvica</span>
+<p class="text-xs text-on-surface-variant">Falta de elasticidad ligamentosa completa, lo que ocasiona partos prolongados y traumatismo severo en el canal de parto.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Banner con Imagen Editorial Existente -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm border border-border-subtle overflow-hidden grid grid-cols-1 md:grid-cols-12 mb-space-2xl items-center">
+<div class="md:col-span-6 p-space-lg md:p-space-xl flex flex-col gap-space-md">
+<div class="inline-flex items-center gap-2 self-start px-3 py-1 rounded-full bg-accent-mint-light text-tertiary text-xs font-bold">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>Cuidado y Autodeterminación</span>
+</div>
+<h3 class="text-2xl font-extrabold text-on-surface leading-tight">
+            Priorizar tu cuerpo hoy asegura tu bienestar mañana
+          </h3>
+<p class="text-sm text-on-surface-variant">
+            Esperar a la adultez para un embarazo planificado reduce exponencialmente complicaciones obstétricas y permite que tu cuerpo complete su óptimo desarrollo esquelético y cognitivo.
+          </p>
+<div class="pt-1 flex items-center gap-space-sm">
+<button class="px-5 py-2.5 rounded-full bg-primary text-on-primary text-xs font-bold shadow-sm hover:brightness-105 transition-all flex items-center gap-2" onclick="switchAppTab('metodos')">
+<span>Explorar Métodos de Cuidado</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="md:col-span-6 h-64 md:h-full min-h-[260px] overflow-hidden">
+<img alt="Estudiantes jóvenes con mochilas conversando alegres en un campus universitario" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VeMMIoW3zjAM4VuFDTrEff0H9hsdbQXMP8IB9nCx9jJgk0DNP1FTBHc0933zpMFFDsWlWsJ5c7DxUjCip85LmxDAXzynw3zmPzgrlMYc_oUYrlTu48fP8bPX6_9dwTea1rFzO-6fmFgiRsMmWI6oHV6-MyA3w8Zulsv_QORoLfeBdil6x-9YaVdO4LJeyC45WdFuBI6-jnk6hBkEo4sOq1SJGj_6oRSMwcWcUSt6DEs9sRO5lv5IV5zNo"/>
+</div>
+</div>
+<!-- Interactivo: Tu Proyecto de Vida Primero -->
+<div class="bg-surface-container-low rounded-2xl p-space-lg md:p-space-xl flex flex-col gap-space-lg shadow-sm border border-border-subtle">
+<div class="flex flex-col gap-1">
+<div class="inline-flex items-center gap-2 self-start px-3 py-1 rounded-full bg-surface-subtle text-primary text-xs font-bold">
+<span class="material-symbols-outlined text-[16px]">flag</span>
+<span>Herramienta Interactiva</span>
+</div>
+<h2 class="text-2xl font-extrabold text-on-surface">Módulo: Tu Proyecto de Vida Primero</h2>
+<p class="text-sm text-on-surface-variant max-w-2xl">
+            Tus sueños necesitan espacio, tiempo y libertad para desplegarse. Elige cuáles son tus prioridades en este momento y comprueba cómo planificar tu futuro te da libertad:
+          </p>
+</div>
+<!-- Grid de Metas -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md" id="goalsGrid">
+<button class="goal-card text-left bg-surface-container-lowest p-space-md rounded-xl shadow-sm border border-border-subtle hover:border-primary transition-all flex flex-col justify-between gap-space-md cursor-pointer group" data-selected="false" onclick="toggleGoalCard(this)">
+<div class="flex items-center justify-between w-full">
+<div class="w-10 h-10 rounded-full bg-surface-subtle text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">school</span>
+</div>
+<span class="material-symbols-outlined text-outline radio-icon group-hover:text-primary transition-colors text-[20px]">radio_button_unchecked</span>
+</div>
+<div>
+<h4 class="font-bold text-sm text-on-surface">Carrera &amp; Estudios</h4>
+<p class="text-xs text-on-surface-variant mt-1">Titularte, aprender idiomas y descubrir tu vocación profesional sin interrupciones forzadas.</p>
+</div>
+</button>
+<button class="goal-card text-left bg-surface-container-lowest p-space-md rounded-xl shadow-sm border border-border-subtle hover:border-tertiary transition-all flex flex-col justify-between gap-space-md cursor-pointer group" data-selected="false" onclick="toggleGoalCard(this)">
+<div class="flex items-center justify-between w-full">
+<div class="w-10 h-10 rounded-full bg-accent-mint-light text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">flight_takeoff</span>
+</div>
+<span class="material-symbols-outlined text-outline radio-icon group-hover:text-tertiary transition-colors text-[20px]">radio_button_unchecked</span>
+</div>
+<div>
+<h4 class="font-bold text-sm text-on-surface">Viajar y Explorar</h4>
+<p class="text-xs text-on-surface-variant mt-1">Conocer nuevos países, culturas y mochilear con la total libertad y autonomía de tu juventud.</p>
+</div>
+</button>
+<button class="goal-card text-left bg-surface-container-lowest p-space-md rounded-xl shadow-sm border border-border-subtle hover:border-secondary transition-all flex flex-col justify-between gap-space-md cursor-pointer group" data-selected="false" onclick="toggleGoalCard(this)">
+<div class="flex items-center justify-between w-full">
+<div class="w-10 h-10 rounded-full bg-accent-salmon-light text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">savings</span>
+</div>
+<span class="material-symbols-outlined text-outline radio-icon group-hover:text-secondary transition-colors text-[20px]">radio_button_unchecked</span>
+</div>
+<div>
+<h4 class="font-bold text-sm text-on-surface">Independencia Financiera</h4>
+<p class="text-xs text-on-surface-variant mt-1">Tener ingresos propios, alquilar tu primer departamento y construir autonomía real.</p>
+</div>
+</button>
+<button class="goal-card text-left bg-surface-container-lowest p-space-md rounded-xl shadow-sm border border-border-subtle hover:border-primary transition-all flex flex-col justify-between gap-space-md cursor-pointer group" data-selected="false" onclick="toggleGoalCard(this)">
+<div class="flex items-center justify-between w-full">
+<div class="w-10 h-10 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">celebration</span>
+</div>
+<span class="material-symbols-outlined text-outline radio-icon group-hover:text-on-surface transition-colors text-[20px]">radio_button_unchecked</span>
+</div>
+<div>
+<h4 class="font-bold text-sm text-on-surface">Vivencias &amp; Amigos</h4>
+<p class="text-xs text-on-surface-variant mt-1">Disfrutar pasatiempos, arte, deportes y forjar recuerdos inolvidables con tus amistades.</p>
+</div>
+</button>
+</div>
+<!-- Feedback de Selección -->
+<div class="hidden bg-surface-container-lowest p-space-md rounded-xl shadow-sm border border-border-subtle items-center gap-space-md animate-in fade-in duration-300" id="goalFeedback">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">stars</span>
+</div>
+<div>
+<h4 class="font-bold text-sm text-primary" id="goalFeedbackTitle">¡Tus metas son tu motor de vida!</h4>
+<p class="text-xs text-on-surface-variant" id="goalFeedbackText">
+              Has seleccionado prioridades fundamentales para tu juventud. La educación sexual informada y la prevención son las mejores herramientas para que nadie interrumpa tus planes.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================== -->
+<!-- PESTAÑA 2: CICLOS MENSTRUALES Y FISIOLOGÍA               -->
+<!-- ======================================================== -->
+<section class="tab-pane hidden flex-col w-full max-w-[1240px] mx-auto px-gutter py-space-xl" id="pane-ciclos">
+<div class="flex flex-col gap-space-sm pb-space-lg">
+<div class="inline-flex items-center gap-2 self-start px-3 py-1 rounded-full bg-surface-container text-primary text-xs font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px]">water_drop</span>
+<span>Biología &amp; Autoconocimiento Corporal</span>
+</div>
+<h1 class="text-3xl sm:text-4xl font-extrabold text-on-surface leading-tight">
+          Conoce tu ciclo menstrual: <span class="text-primary">Fases, Fertilidad</span> y la Verdad del Ritmo
+        </h1>
+<p class="text-base text-on-surface-variant max-w-3xl leading-relaxed">
+          En la adolescencia, el ciclo menstrual normalmente varía entre 21 y 35 días (o incluso hasta 45 días en los primeros dos años tras la menarquía). El eje hipotálamo-hipófisis-ovario aún está madurando, haciendo que los ciclos ovulatorios sean altamente variables.
+        </p>
+</div>
+<!-- Tarjetas Interactivas de las 4 Fases -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-md pb-space-2xl">
+<!-- Fase 1 -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm border border-border-subtle flex flex-col justify-between gap-space-md hover:border-secondary transition-all">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-0.5 rounded-full bg-accent-salmon-light text-secondary text-[11px] font-bold">Días 1 - 5</span>
+<span class="material-symbols-outlined text-secondary text-[22px]">invert_colors</span>
+</div>
+<h3 class="text-base font-bold text-on-surface pt-1">1. Menstruación</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+              Desprendimiento natural del endometrio ante la caída de progesterona. El sangrado habitual dura de 3 a 7 días.
+            </p>
+</div>
+<div class="p-2.5 bg-surface-container-low rounded-lg text-[11px] text-on-surface-variant border border-border-subtle">
+<strong class="text-secondary block mb-0.5">Cuidados dignos:</strong> Compresas de calor en abdomen bajo, hidratación y analgésicos si hay cólicos moderados.
+          </div>
+</div>
+<!-- Fase 2 -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm border border-border-subtle flex flex-col justify-between gap-space-md hover:border-primary transition-all">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-0.5 rounded-full bg-surface-subtle text-primary text-[11px] font-bold">Días 6 - 13</span>
+<span class="material-symbols-outlined text-primary text-[22px]">energy_savings_leaf</span>
+</div>
+<h3 class="text-base font-bold text-on-surface pt-1">2. Fase Folicular</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+              La hormona FSH estimula el desarrollo de folículos en el ovario. Los estrógenos suben, engrosando la pared uterina y elevando la energía física y anímica.
+            </p>
+</div>
+<div class="p-2.5 bg-surface-container-low rounded-lg text-[11px] text-on-surface-variant border border-border-subtle">
+<strong class="text-primary block mb-0.5">Flujo cervical:</strong> Pasa de seco a cremoso y luego elástico similar a clara de huevo.
+          </div>
+</div>
+<!-- Fase 3 -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm border-2 border-secondary/30 flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary text-on-secondary text-[11px] font-bold">Día 14 (Aprox.)</span>
+<span class="material-symbols-outlined text-secondary text-[22px]">bubble_chart</span>
+</div>
+<h3 class="text-base font-bold text-on-surface pt-1">3. Ovulación &amp; Ventana</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+              El pico de hormona LH desencadena la expulsión del óvulo maduro. El óvulo sobrevive 24 horas, pero los espermatozoides pueden vivir hasta 5 días dentro del útero.
+            </p>
+</div>
+<div class="p-2.5 bg-accent-salmon-light rounded-lg text-[11px] text-secondary border border-secondary/20">
+<strong class="block mb-0.5">¡Alerta crítica!</strong> El método del ritmo falla con tasas de embarazo superiores al 24% en jóvenes debido a ovulaciones impredecibles.
+          </div>
+</div>
+<!-- Fase 4 -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm border border-border-subtle flex flex-col justify-between gap-space-md hover:border-tertiary transition-all">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-0.5 rounded-full bg-accent-mint-light text-tertiary text-[11px] font-bold">Días 15 - 28</span>
+<span class="material-symbols-outlined text-tertiary text-[22px]">psychology_alt</span>
+</div>
+<h3 class="text-base font-bold text-on-surface pt-1">4. Fase Lútea</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+              El cuerpo lúteo produce progesterona para sostener una posible gestación. Si no hay fecundación, los niveles caen abruptamente, detonando el Síndrome Premenstrual (SPM).
+            </p>
+</div>
+<div class="p-2.5 bg-surface-container-low rounded-lg text-[11px] text-on-surface-variant border border-border-subtle">
+<strong class="text-tertiary block mb-0.5">Cambios:</strong> Sensibilidad mamaria normal, cambios de humor y retención leve de líquidos.
+          </div>
+</div>
+</div>
+<!-- Calculadora Educativa del Ciclo -->
+<div class="bg-surface-container-low rounded-2xl p-space-lg md:p-space-xl shadow-sm border border-border-subtle mb-space-2xl grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
+<div class="lg:col-span-6 flex flex-col gap-space-md">
+<div class="inline-flex items-center gap-2 self-start px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-xs font-bold">
+<span class="material-symbols-outlined text-[16px]">calculate</span>
+<span>Simulador Pedagógico</span>
+</div>
+<h2 class="text-2xl font-extrabold text-on-surface">Calculadora Educativa del Ciclo</h2>
+<p class="text-sm text-on-surface-variant">
+            Selecciona la fecha de tu último periodo y la duración media habitual. Observa cómo se calculan las fechas teóricas y comprende por qué <strong>nunca debe utilizarse como método anticonceptivo</strong>.
+          </p>
+<div class="flex flex-col gap-space-sm pt-1">
+<div>
+<label class="text-xs font-bold text-on-surface block mb-1">Primer día de tu última menstruación:</label>
+<input class="w-full bg-surface-container-lowest px-4 py-2.5 rounded-xl border border-border-subtle text-on-surface text-sm focus:ring-2 focus:ring-primary outline-none shadow-sm" id="calcStartDate" type="date" value="2025-02-01"/>
+</div>
+<div>
+<label class="text-xs font-bold text-on-surface block mb-1">Duración media de tu ciclo (días):</label>
+<select class="w-full bg-surface-container-lowest px-4 py-2.5 rounded-xl border border-border-subtle text-on-surface text-sm focus:ring-2 focus:ring-primary outline-none shadow-sm" id="calcCycleLength">
+<option value="26">26 días (Ciclo corto)</option>
+<option selected="" value="28">28 días (Promedio estándar)</option>
+<option value="30">30 días</option>
+<option value="32">32 días</option>
+<option value="35">35 días (Común en adolescentes)</option>
+</select>
+</div>
+<button class="mt-2 px-5 py-2.5 rounded-full bg-primary text-on-primary text-xs font-bold shadow-md hover:brightness-110 active:scale-95 transition-all text-center flex items-center justify-center gap-2" onclick="runCycleCalculation()">
+<span class="material-symbols-outlined text-[18px]">autorenew</span>
+<span>Calcular Estimación Educativa</span>
+</button>
+</div>
+</div>
+<!-- Resultados del Simulador -->
+<div class="lg:col-span-6 bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm border border-border-subtle flex flex-col justify-between gap-space-md">
+<div class="flex items-center justify-between pb-1 border-b border-border-subtle">
+<span class="font-bold text-sm text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">event</span>
+<span>Proyección Teórica Estimada</span>
+</span>
+<span class="px-2.5 py-0.5 rounded-full bg-accent-mint-light text-tertiary text-[11px] font-bold">Fines Educativos</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="bg-surface-container-low p-space-sm rounded-xl border border-border-subtle flex flex-col">
+<span class="text-[11px] text-on-surface-variant font-bold uppercase">Próxima Menstruación:</span>
+<span class="text-base font-extrabold text-primary mt-1" id="outputNextPeriod">1 de Marzo, 2025</span>
+</div>
+<div class="bg-accent-salmon-light p-space-sm rounded-xl border border-secondary/20 flex flex-col">
+<span class="text-[11px] text-secondary font-bold uppercase">Ovulación Probable:</span>
+<span class="text-base font-extrabold text-secondary mt-1" id="outputOvulation">15 de Febrero, 2025</span>
+</div>
+</div>
+<div class="bg-surface-subtle p-space-md rounded-xl border border-border-subtle flex flex-col gap-1">
+<span class="text-xs font-bold text-primary uppercase">Ventana Fértil Ampliada:</span>
+<span class="text-sm font-bold text-on-surface" id="outputFertileWindow">Del 10 al 16 de Febrero, 2025</span>
+<p class="text-xs text-on-surface-variant pt-1 leading-relaxed">
+              Los espermatozoides pueden vivir hasta 5 días en el tracto genital antes de la ovulación. Cualquier relación sin protección en estos días conlleva un altísimo riesgo reproductivo.
+            </p>
+</div>
+<div class="p-3 bg-error-container text-on-error-container rounded-xl flex items-start gap-2.5 border border-error/20">
+<span class="material-symbols-outlined text-[20px] shrink-0 text-error mt-0.5">report</span>
+<p class="text-xs leading-relaxed">
+<strong>Advertencia Médica:</strong> Los ciclos juveniles son naturalmente variables por estrés escolar, nutrición, emociones y hormonas en desarrollo. <strong>Nunca uses este cálculo como método anticonceptivo.</strong>
+</p>
+</div>
+</div>
+</div>
+<!-- Indicadores de Alerta Ginecológica -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm border border-border-subtle flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-full bg-accent-salmon-light text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[26px]">medical_information</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-bold text-base text-on-surface">Señales de Alerta: ¿Cuándo acudir al médico?</h3>
+<p class="text-xs text-on-surface-variant max-w-xl mt-0.5 leading-relaxed">
+              Consulta ginecológica obligatoria si tus ciclos duran menos de 21 o más de 45 días seguidos, si presentas amenorrea (&gt;90 días sin sangrado sin estar embarazada), dolor incapacitante que te impide ir a clases o sangrado que empapa más de 1 toalla/tampón por hora.
+            </p>
+</div>
+</div>
+<button class="px-5 py-2.5 rounded-full bg-surface-container text-primary text-xs font-bold hover:bg-surface-container-high transition-colors shrink-0 flex items-center gap-2" onclick="openModalSOS()">
+<span>Ubicar Centro Amigable</span>
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+</button>
+</div>
+</section>
+<!-- ======================================================== -->
+<!-- PESTAÑA 3: MÉTODOS ANTICONCEPTIVOS (TAB 'metodos')        -->
+<!-- ======================================================== -->
+<section class="tab-pane hidden flex-col w-full max-w-[1240px] mx-auto px-gutter py-space-xl" id="pane-metodos">
+<div class="flex flex-col gap-space-sm pb-space-lg">
+<div class="inline-flex items-center gap-2 self-start px-3 py-1 rounded-full bg-accent-mint-light text-tertiary text-xs font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px]">shield_with_heart</span>
+<span>Guía Médica Comparativa</span>
+</div>
+<h1 class="text-3xl sm:text-4xl font-extrabold text-on-surface leading-tight">
+          Métodos Anticonceptivos: <span class="text-primary">Efectividad</span>, Doble Protección y Elección Libre
+        </h1>
+<p class="text-base text-on-surface-variant max-w-3xl leading-relaxed">
+          Ningún método es único para todas las personas. Aprende cómo actúa cada uno, su tasa de eficacia en la vida real y la regla de oro de la <strong>doble protección</strong>: combinar un método de alta eficacia con preservativo para prevenir Infecciones de Transmisión Sexual (ITS).
+        </p>
+</div>
+<!-- Barra de Filtros Interactiva -->
+<div class="bg-surface-container-low p-2 rounded-2xl mb-space-lg flex flex-wrap items-center justify-between gap-space-sm shadow-sm border border-border-subtle">
+<div class="flex flex-wrap items-center gap-1.5" id="methodFiltersContainer">
+<span class="text-xs font-bold text-on-surface-variant px-2 uppercase">Filtrar:</span>
+<button class="filter-btn px-4 py-1.5 rounded-full text-xs font-bold bg-primary text-on-primary shadow-sm transition-all" data-filter="all" onclick="filterMethods('all', this)">
+            Todos (6 Métodos)
+          </button>
+<button class="filter-btn px-4 py-1.5 rounded-full text-xs font-semibold bg-surface-container-lowest text-on-surface-variant hover:text-primary transition-all" data-filter="barrera" onclick="filterMethods('barrera', this)">
+            De Barrera (Protegen ITS)
+          </button>
+<button class="filter-btn px-4 py-1.5 rounded-full text-xs font-semibold bg-surface-container-lowest text-on-surface-variant hover:text-primary transition-all" data-filter="larc" onclick="filterMethods('larc', this)">
+            LARC (Larga Duración &gt;99%)
+          </button>
+<button class="filter-btn px-4 py-1.5 rounded-full text-xs font-semibold bg-surface-container-lowest text-on-surface-variant hover:text-primary transition-all" data-filter="hormonal" onclick="filterMethods('hormonal', this)">
+            Hormonales Cortos
+          </button>
+<button class="filter-btn px-4 py-1.5 rounded-full text-xs font-semibold bg-surface-container-lowest text-on-surface-variant hover:text-primary transition-all" data-filter="emergencia" onclick="filterMethods('emergencia', this)">
+            De Emergencia (PAE)
+          </button>
+</div>
+<div class="hidden sm:flex items-center gap-1 text-xs text-primary font-bold pr-2">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Aprobados por OMS y ACOG</span>
+</div>
+</div>
+<!-- Grid de Tarjetas de Métodos -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg pb-space-2xl" id="methodsList">
+<!-- Método 1: Preservativo Masculino y Femenino (Barrera) -->
+<div class="method-card bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm border border-border-subtle hover:shadow-md transition-all flex flex-col justify-between" data-category="barrera">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="w-10 h-10 rounded-full bg-accent-mint-light text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">health_and_safety</span>
+</span>
+<span class="px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant text-[11px] font-bold">
+                ¡ÚNICO CONTRA ITS!
+              </span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-on-surface">Preservativo Masculino y Femenino</h3>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                Funda de látex o poliuretano. Es el pilar de la <strong>doble protección</strong>: evita el intercambio de fluidos y contacto mucoso, frenando VIH, VPH, gonorrea, sífilis y herpes.
+              </p>
+</div>
+<div class="grid grid-cols-2 gap-2 bg-surface-container-low p-2.5 rounded-xl border border-border-subtle">
+<div>
+<span class="text-[10px] uppercase font-bold text-on-surface-variant block">Eficacia Típica:</span>
+<span class="text-sm font-bold text-primary">85% a 98%</span>
+</div>
+<div>
+<span class="text-[10px] uppercase font-bold text-on-surface-variant block">Protección ITS:</span>
+<span class="text-sm font-bold text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> SÍ (100%)
+                </span>
+</div>
+</div>
+<div class="text-xs text-on-surface-variant leading-snug">
+<strong class="text-on-surface">Modo de uso:</strong> Colocar antes de cualquier contacto genital. Usar exclusivamente lubricantes con base acuosa o de silicona.
+            </div>
+</div>
+<div class="mt-4 pt-3 border-t border-border-subtle flex items-center justify-between text-tertiary text-xs font-bold">
+<span>Gratuito en centros de salud</span>
+<span class="material-symbols-outlined text-[18px]">volunteer_activism</span>
+</div>
+</div>
+<!-- Método 2: Implante Subdérmico (LARC) -->
+<div class="method-card bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm border border-border-subtle hover:shadow-md transition-all flex flex-col justify-between" data-category="larc">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="w-10 h-10 rounded-full bg-surface-subtle text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">timer</span>
+</span>
+<span class="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-[11px] font-bold">
+                LARC · PRIMERA LÍNEA
+              </span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-on-surface">Implante Subdérmico</h3>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                Pequeña varilla flexible colocada bajo la piel del brazo por personal médico. Libera progestágeno continuo de 3 a 5 años. Ideal para adolescentes: no depende de la memoria diaria.
+              </p>
+</div>
+<div class="grid grid-cols-2 gap-2 bg-surface-container-low p-2.5 rounded-xl border border-border-subtle">
+<div>
+<span class="text-[10px] uppercase font-bold text-on-surface-variant block">Eficacia Clínica:</span>
+<span class="text-sm font-bold text-primary">&gt; 99.95%</span>
+</div>
+<div>
+<span class="text-[10px] uppercase font-bold text-on-surface-variant block">Protección ITS:</span>
+<span class="text-sm font-bold text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">cancel</span> NO protege
+                </span>
+</div>
+</div>
+<div class="text-xs text-on-surface-variant leading-snug">
+<strong class="text-on-surface">Ventaja:</strong> Reversible de forma inmediata en cuanto se retira. No altera la fertilidad a largo plazo.
+            </div>
+</div>
+<div class="mt-4 pt-3 border-t border-border-subtle flex items-center justify-between text-primary text-xs font-bold">
+<span>Duración: 3 a 5 años</span>
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+</div>
+<!-- Método 3: DIU Cobre y Hormonal (LARC) -->
+<div class="method-card bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm border border-border-subtle hover:shadow-md transition-all flex flex-col justify-between" data-category="larc">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="w-10 h-10 rounded-full bg-surface-subtle text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">health_cross</span>
+</span>
+<span class="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-[11px] font-bold">
+                LARC · DISCRETO
+              </span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-on-surface">DIU (T de Cobre / Hormonal)</h3>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                Dispositivo intrauterino colocado por profesional. La OMS respalda que mujeres jóvenes que nunca han parido (nulíparas) pueden utilizarlo con absoluta seguridad médica.
+              </p>
+</div>
+<div class="grid grid-cols-2 gap-2 bg-surface-container-low p-2.5 rounded-xl border border-border-subtle">
+<div>
+<span class="text-[10px] uppercase font-bold text-on-surface-variant block">Eficacia Clínica:</span>
+<span class="text-sm font-bold text-primary">&gt; 99%</span>
+</div>
+<div>
+<span class="text-[10px] uppercase font-bold text-on-surface-variant block">Protección ITS:</span>
+<span class="text-sm font-bold text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">cancel</span> NO protege
+                </span>
+</div>
+</div>
+<div class="text-xs text-on-surface-variant leading-snug">
+<strong class="text-on-surface">Opciones:</strong> T de Cobre (libre de hormonas, hasta 10 años) o DIU hormonal (reduce cólicos y sangrado abundante, 3-5 años).
+            </div>
+</div>
+<div class="mt-4 pt-3 border-t border-border-subtle flex items-center justify-between text-primary text-xs font-bold">
+<span>Apto para nulíparas</span>
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+</div>
+<!-- Método 4: Pastillas Anticonceptivas (Hormonales) -->
+<div class="method-card bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm border border-border-subtle hover:shadow-md transition-all flex flex-col justify-between" data-category="hormonal">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="w-10 h-10 rounded-full bg-accent-salmon-light text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">medication</span>
+</span>
+<span class="px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant text-[11px] font-bold">
+                TOMA DIARIA ESTRICTA
+              </span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-on-surface">Píldoras Anticonceptivas</h3>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                Comprimidos combinados o de progestágeno solo. Inhiben la ovulación y espesan el moco cervical. Requieren disciplina estricta de horario todos los días.
+              </p>
+</div>
+<div class="grid grid-cols-2 gap-2 bg-surface-container-low p-2.5 rounded-xl border border-border-subtle">
+<div>
+<span class="text-[10px] uppercase font-bold text-on-surface-variant block">Eficacia Real / Uso:</span>
+<span class="text-sm font-bold text-primary">91% (Olvidos comunes)</span>
+</div>
+<div>
+<span class="text-[10px] uppercase font-bold text-on-surface-variant block">Protección ITS:</span>
+<span class="text-sm font-bold text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">cancel</span> NO protege
+                </span>
+</div>
+</div>
+<div class="text-xs text-on-surface-variant leading-snug">
+<strong class="text-on-surface">Alerta adolescente:</strong> Si olvidas una pastilla por más de 12 horas, vómitos o diarrea, se debe usar condón complementario por 7 días.
+            </div>
+</div>
+<div class="mt-4 pt-3 border-t border-border-subtle flex items-center justify-between text-on-surface-variant text-xs font-semibold">
+<span>Requiere alarma o hábito</span>
+<span class="material-symbols-outlined text-[18px]">alarm</span>
+</div>
+</div>
+<!-- Método 5: Inyecciones Anticonceptivas (Hormonales) -->
+<div class="method-card bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm border border-border-subtle hover:shadow-md transition-all flex flex-col justify-between" data-category="hormonal">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="w-10 h-10 rounded-full bg-accent-salmon-light text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">vaccines</span>
+</span>
+<span class="px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant text-[11px] font-bold">
+                MENSUAL / TRIMESTRAL
+              </span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-on-surface">Inyecciones Intramusculares</h3>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                Inyecciones aplicadas en el glúteo o brazo cada 30 o 90 días. Eliminan la preocupación de tomar una pastilla cada día pero exigen puntualidad en la fecha de reaplicación.
+              </p>
+</div>
+<div class="grid grid-cols-2 gap-2 bg-surface-container-low p-2.5 rounded-xl border border-border-subtle">
+<div>
+<span class="text-[10px] uppercase font-bold text-on-surface-variant block">Eficacia Típica:</span>
+<span class="text-sm font-bold text-primary">94% a 99%</span>
+</div>
+<div>
+<span class="text-[10px] uppercase font-bold text-on-surface-variant block">Protección ITS:</span>
+<span class="text-sm font-bold text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">cancel</span> NO protege
+                </span>
+</div>
+</div>
+<div class="text-xs text-on-surface-variant leading-snug">
+<strong class="text-on-surface">Efectos normales:</strong> Puede alterar el patrón de sangrado (hacerlo escaso o generar amenorrea temporal benigna).
+            </div>
+</div>
+<div class="mt-4 pt-3 border-t border-border-subtle flex items-center justify-between text-on-surface-variant text-xs font-semibold">
+<span>Aplicación cada 1 o 3 meses</span>
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+</div>
+</div>
+<!-- Método 6: Anticoncepción de Emergencia (PAE) -->
+<div class="method-card bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm border border-secondary/30 hover:shadow-md transition-all flex flex-col justify-between" data-category="emergencia">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="w-10 h-10 rounded-full bg-secondary-fixed text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">e911_emergency</span>
+</span>
+<span class="px-3 py-1 rounded-full bg-secondary text-on-secondary text-[11px] font-bold">
+                RESCATE DE EMERGENCIA
+              </span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-on-surface">Pastilla del Día Después (PAE)</h3>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                Levonorgestrel o Ulipristal. Método de rescate ante rotura de condón, relación no consentida o coito sin protección. <strong>NO es abortiva</strong>: solo retrasa la ovulación antes de que ocurra la fecundación.
+              </p>
+</div>
+<div class="grid grid-cols-2 gap-2 bg-accent-salmon-light p-2.5 rounded-xl border border-secondary/20">
+<div>
+<span class="text-[10px] uppercase font-bold text-secondary block">Ventana Máxima:</span>
+<span class="text-sm font-bold text-secondary">72h a 120h</span>
+</div>
+<div>
+<span class="text-[10px] uppercase font-bold text-secondary block">Eficacia Pronta:</span>
+<span class="text-sm font-bold text-secondary">&gt;95% (&lt;24 horas)</span>
+</div>
+</div>
+<div class="text-xs text-on-surface-variant leading-snug">
+<strong class="text-on-surface">Uso Responsable:</strong> No reemplaza un método continuo; su dosis concentrada causa desajustes menstruales si se usa repetitivamente.
+            </div>
+</div>
+<div class="mt-4 pt-3 border-t border-border-subtle flex items-center justify-between text-secondary text-xs font-bold">
+<span>De venta libre en farmacias</span>
+<span class="material-symbols-outlined text-[18px]">local_pharmacy</span>
+</div>
+</div>
+</div>
+<!-- Barra Comparativa Interactiva de Doble Protección -->
+<div class="bg-surface-container-low rounded-2xl p-space-lg shadow-sm border border-border-subtle flex flex-col gap-space-md">
+<h3 class="text-base font-extrabold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">compare</span>
+<span>Comparativa de Estrategias y el Concepto de "Doble Protección"</span>
+</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+          Ningún anticonceptivo hormonal protege de enfermedades. La estrategia médica más efectiva recomendada para jóvenes es la <strong>Doble Protección</strong>: usar siempre condón + un método de alta continuidad (Implante, DIU o Píldora).
+        </p>
+<div class="flex flex-col gap-3 pt-1">
+<!-- Item 1 -->
+<div class="bg-surface-container-lowest p-3 rounded-xl border border-border-subtle flex flex-col md:flex-row md:items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[20px]">stars</span>
+<span class="text-xs font-bold text-on-surface">Doble Protección (Condón + LARC/Implante):</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-48 bg-surface-container rounded-full h-3 overflow-hidden">
+<div class="bg-tertiary h-full rounded-full w-[99.9%]"></div>
+</div>
+<span class="text-xs font-black text-tertiary shrink-0">99.9% Embarazo + 100% ITS</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-surface-container-lowest p-3 rounded-xl border border-border-subtle flex flex-col md:flex-row md:items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">timer</span>
+<span class="text-xs font-bold text-on-surface">Solo Implante o DIU (Sin Condón):</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-48 bg-surface-container rounded-full h-3 overflow-hidden">
+<div class="bg-primary h-full rounded-full w-[99%]"></div>
+</div>
+<span class="text-xs font-bold text-primary shrink-0">99% Embarazo + <span class="text-secondary font-bold">0% ITS</span></span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="bg-surface-container-lowest p-3 rounded-xl border border-border-subtle flex flex-col md:flex-row md:items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">warning</span>
+<span class="text-xs font-bold text-on-surface">Coito Interrumpido / Ritmo (Sin método):</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-48 bg-surface-container rounded-full h-3 overflow-hidden">
+<div class="bg-secondary h-full rounded-full w-[24%]"></div>
+</div>
+<span class="text-xs font-black text-secondary shrink-0">Fallo de ~24% + 0% ITS (Peligroso)</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================== -->
+<!-- PESTAÑA 4: TECNOLOGÍA, SEXUALIDAD Y SEXTING SEGURO        -->
+<!-- ======================================================== -->
+<section class="tab-pane hidden flex-col w-full max-w-[1240px] mx-auto px-gutter py-space-xl" id="pane-tecnologia">
+<div class="flex flex-col gap-space-sm pb-space-lg">
+<div class="inline-flex items-center gap-2 self-start px-3 py-1 rounded-full bg-surface-container text-primary text-xs font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px]">security</span>
+<span>Ciudadanía Digital &amp; Autonomía</span>
+</div>
+<h1 class="text-3xl sm:text-4xl font-extrabold text-on-surface leading-tight">
+          Sexualidad en la era digital: <span class="text-primary">Consentimiento</span>, Privacidad y Sexting Seguro
+        </h1>
+<p class="text-base text-on-surface-variant max-w-3xl leading-relaxed">
+          Internet, las redes sociales y los dispositivos móviles forman parte de cómo exploramos afectos e intimidad. Aprender a proteger tu huella digital y tus límites asegura tu integridad emocional, física y legal.
+        </p>
+</div>
+<!-- 3 Pilares Tecnológicos en la Sexualidad -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md pb-space-xl">
+<div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm border border-border-subtle flex flex-col gap-2">
+<div class="w-10 h-10 rounded-full bg-surface-subtle text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">feed</span>
+</div>
+<h3 class="font-bold text-sm text-on-surface">Pornografía vs. Realidad Afectiva</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+            La pornografía comercial en línea está guionizada para consumo comercial: suele omitir el uso de condón, el consentimiento entusiasta y reproduce estereotipos corporales irreales. La sexualidad real se basa en respeto mutuo, comunicación y cuidado.
+          </p>
+</div>
+<div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm border border-border-subtle flex flex-col gap-2">
+<div class="w-10 h-10 rounded-full bg-accent-salmon-light text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">share_location</span>
+</div>
+<h3 class="font-bold text-sm text-on-surface">Presión de Redes Sociales</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+            La coacción digital ("si me quieres, mándame una foto") es una forma de violencia psicológica. Ningún vínculo sano exige poner en riesgo tu intimidad como prueba de cariño o lealtad.
+          </p>
+</div>
+<div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm border border-border-subtle flex flex-col gap-2">
+<div class="w-10 h-10 rounded-full bg-accent-mint-light text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">lock_reset</span>
+</div>
+<h3 class="font-bold text-sm text-on-surface">Privacidad en Apps de Menstruación</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+            Muchos calendarios menstruales gratuitos comercializan historiales biológicos. Revisa siempre los términos de privacidad y busca apps con cifrado de extremo a extremo que no moneticen tus datos de salud íntima.
+          </p>
+</div>
+</div>
+<!-- Protocolo Interactivo de Sexting Seguro (4 Reglas) -->
+<div class="bg-surface-container-low rounded-2xl p-space-lg md:p-space-xl shadow-sm border border-border-subtle mb-space-2xl">
+<div class="flex flex-col gap-1 pb-space-md">
+<div class="inline-flex items-center gap-2 self-start px-3 py-1 rounded-full bg-surface-subtle text-primary text-xs font-bold">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+<span>Protocolo Técnico de Reducción de Riesgos</span>
+</div>
+<h2 class="text-2xl font-extrabold text-on-surface">Protocolo de Sexting Seguro</h2>
+<p class="text-sm text-on-surface-variant max-w-2xl">
+            Si decides de manera voluntaria, mayor de edad y consensuada enviar contenido íntimo, aplica siempre estas cuatro medidas estrictas de ciberseguridad:
+          </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Regla 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl border border-border-subtle flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-accent-mint-light text-tertiary flex items-center justify-center shrink-0">
+<span class="text-sm font-bold">1</span>
+</div>
+<div>
+<h4 class="font-bold text-sm text-on-surface">Consentimiento Explícito, Mutuo y Reversible</h4>
+<p class="text-xs text-on-surface-variant mt-0.5 leading-relaxed">
+                Ambas partes deben desearlo sin chantajes ni insistencias. Tienes el derecho absoluto de arrepentirte y cambiar de opinión en cualquier momento, y la otra persona debe respetar tu decisión.
+              </p>
+</div>
+</div>
+<!-- Regla 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl border border-border-subtle flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-accent-salmon-light text-secondary flex items-center justify-center shrink-0">
+<span class="text-sm font-bold">2</span>
+</div>
+<div>
+<h4 class="font-bold text-sm text-on-surface">Anonimato Visual Total</h4>
+<p class="text-xs text-on-surface-variant mt-0.5 leading-relaxed">
+<strong>Jamás muestres tu rostro</strong>, tatuajes distintivos, lunares, cicatrices ni fondos reconocibles (uniformes escolares, paredes o diplomas familiares de tu habitación).
+              </p>
+</div>
+</div>
+<!-- Regla 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl border border-border-subtle flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-surface-subtle text-primary flex items-center justify-center shrink-0">
+<span class="text-sm font-bold">3</span>
+</div>
+<div>
+<h4 class="font-bold text-sm text-on-surface">Higiene Digital y Metadatos EXIF</h4>
+<p class="text-xs text-on-surface-variant mt-0.5 leading-relaxed">
+                Los teléfonos incrustan en cada fotografía tu ubicación GPS exacta, modelo del teléfono y fecha. Desactiva la geolocalización de la cámara antes de tomar imágenes privadas.
+              </p>
+</div>
+</div>
+<!-- Regla 4 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl border border-border-subtle flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="text-sm font-bold">4</span>
+</div>
+<div>
+<h4 class="font-bold text-sm text-on-surface">Plataformas con Autodestrucción</h4>
+<p class="text-xs text-on-surface-variant mt-0.5 leading-relaxed">
+                Usa canales que bloqueen capturas de pantalla o envíen alertas de visualización única (Signal, chats secretos de Telegram). Jamás sincronices estas fotos a nubes compartidas (iCloud/Google Photos familiar).
+              </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Marco Legal / Ley Olimpia y Qué hacer ante Sextorsión -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm border border-border-subtle flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2 text-secondary font-bold text-sm">
+<span class="material-symbols-outlined text-[22px]">gavel</span>
+<span>Marco Legal: La Ley Olimpia y Delitos Digitales</span>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+              Difundir, compartir, comercializar o reenviar contenido íntimo de otra persona sin su consentimiento explícito <strong>es un delito penal grave</strong> castigado con penas de cárcel económica y penitenciaria efectiva.
+            </p>
+<div class="p-3 bg-accent-salmon-light rounded-xl border border-secondary/20 flex flex-col gap-1 text-xs">
+<strong class="text-secondary font-bold">¡Recuerda siempre!</strong>
+<p class="text-on-surface leading-snug">
+                Si alguna imagen tuya fue divulgada sin tu permiso, <strong>tú no eres culpable de nada</strong>. La única persona que comete una falta y un delito es quien traiciona la confianza y vulnera tu privacidad.
+              </p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-5 py-2.5 rounded-full bg-secondary text-on-secondary text-xs font-bold hover:brightness-105 transition-all flex items-center gap-2" onclick="openModalSOS()">
+<span class="material-symbols-outlined text-[16px]">e911_emergency</span>
+<span>Denunciar a Policía Cibernética</span>
+</button>
+</div>
+</div>
+<div class="lg:col-span-5 bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm border border-border-subtle flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-2">
+<h4 class="font-bold text-sm text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">support</span>
+<span>Pasos si estás sufriendo extorsión</span>
+</h4>
+<ol class="flex flex-col gap-2 text-xs text-on-surface-variant list-decimal pl-4 leading-relaxed">
+<li><strong>No pagues ni cedas a más fotos:</strong> La extorsión nunca se detiene tras el primer pago o envío.</li>
+<li><strong>Guarda capturas de pantalla:</strong> Registra números de teléfono, usuarios, perfiles y mensajes como prueba forense.</li>
+<li><strong>Bloquea y reporta la cuenta:</strong> Utiliza los canales de denuncia de Meta, Google, X o TikTok.</li>
+<li><strong>Pide ayuda inmediata:</strong> Habla con una persona de confianza o llama a las líneas de protección jurídica gratuita.</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================== -->
+<!-- PESTAÑA 5: MITOS VS REALIDADES (TAB 'mitos')              -->
+<!-- ======================================================== -->
+<section class="tab-pane hidden flex-col w-full max-w-[1240px] mx-auto px-gutter py-space-xl" id="pane-mitos">
+<div class="flex flex-col gap-space-sm pb-space-lg">
+<div class="inline-flex items-center gap-2 self-start px-3 py-1 rounded-full bg-accent-salmon-light text-secondary text-xs font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px]">cancel</span>
+<span>Desmitificando Creencias Populares</span>
+</div>
+<h1 class="text-3xl sm:text-4xl font-extrabold text-on-surface leading-tight">
+          Mitos vs Realidades: <span class="text-secondary">Lo que la ciencia dice</span> y lo que la calle inventa
+        </h1>
+<p class="text-base text-on-surface-variant max-w-3xl leading-relaxed">
+          Los rumores entre amigos y las historias de redes provocan la mayoría de los sustos y desinformaciones. Haz clic en cada tarjeta para desplegar la explicación médica fundamentada.
+        </p>
+</div>
+<!-- Acordeón / Tarjetas Desplegables de Mitos -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md pb-space-2xl" id="mythsContainer">
+<!-- Mito 1 -->
+<div class="myth-card bg-surface-container-lowest rounded-2xl p-space-md shadow-sm border border-border-subtle flex flex-col justify-between gap-space-md hover:border-primary transition-all">
+<div class="flex flex-col gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed text-[11px] self-start font-bold">
+              MITO #01
+            </span>
+<h3 class="text-base font-bold text-on-surface">"En la primera relación sexual es imposible quedar embarazada"</h3>
+<p class="text-xs text-on-surface-variant italic">
+              "El cuerpo de la mujer necesita un periodo de adaptación para volverse fértil."
+            </p>
+</div>
+<div class="p-3 bg-accent-salmon-light rounded-xl flex flex-col gap-1 border border-secondary/20">
+<span class="text-xs font-bold text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">biotech</span> REALIDAD CIENTÍFICA:
+            </span>
+<p class="text-xs text-on-surface leading-snug">
+<strong>Falso rotundo.</strong> Si ya hubo menarquía (primera regla), el cuerpo produce óvulos viables. La concepción requiere únicamente un óvulo y un espermatozoide, sin importar si es la primera o la centésima vez.
+            </p>
+</div>
+</div>
+<!-- Mito 2 -->
+<div class="myth-card bg-surface-container-lowest rounded-2xl p-space-md shadow-sm border border-border-subtle flex flex-col justify-between gap-space-md hover:border-primary transition-all">
+<div class="flex flex-col gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed text-[11px] self-start font-bold">
+              MITO #02
+            </span>
+<h3 class="text-base font-bold text-on-surface">"El coito interrumpido (terminar afuera) es un método seguro"</h3>
+<p class="text-xs text-on-surface-variant italic">
+              "Si el hombre retira el pene a tiempo no hay ningún riesgo de embarazo."
+            </p>
+</div>
+<div class="p-3 bg-accent-salmon-light rounded-xl flex flex-col gap-1 border border-secondary/20">
+<span class="text-xs font-bold text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">biotech</span> REALIDAD CIENTÍFICA:
+            </span>
+<p class="text-xs text-on-surface leading-snug">
+<strong>Peligrosa falacia.</strong> El líquido preseminal contiene miles de espermatozoides activos capaces de fecundar. Además, no brinda ninguna protección contra VIH, VPH ni otras ITS.
+            </p>
+</div>
+</div>
+<!-- Mito 3 -->
+<div class="myth-card bg-surface-container-lowest rounded-2xl p-space-md shadow-sm border border-border-subtle flex flex-col justify-between gap-space-md hover:border-primary transition-all">
+<div class="flex flex-col gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed text-[11px] self-start font-bold">
+              MITO #03
+            </span>
+<h3 class="text-base font-bold text-on-surface">"La pastilla de emergencia (PAE) es abortiva o causa infertilidad"</h3>
+<p class="text-xs text-on-surface-variant italic">
+              "Tomarla interrumpe un embarazo en curso y daña tu matriz a futuro."
+            </p>
+</div>
+<div class="p-3 bg-accent-mint-light rounded-xl flex flex-col gap-1 border border-tertiary-fixed">
+<span class="text-xs font-bold text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">verified</span> REALIDAD CIENTÍFICA:
+            </span>
+<p class="text-xs text-on-surface leading-snug">
+<strong>100% Desmentido por la OMS.</strong> La PAE retrasa la ovulación para evitar que el óvulo sea liberado. Si la implantación ya ocurrió, la píldora no surte efecto ni daña el embarazo ni la fertilidad futura.
+            </p>
+</div>
+</div>
+<!-- Mito 4 -->
+<div class="myth-card bg-surface-container-lowest rounded-2xl p-space-md shadow-sm border border-border-subtle flex flex-col justify-between gap-space-md hover:border-primary transition-all">
+<div class="flex flex-col gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed text-[11px] self-start font-bold">
+              MITO #04
+            </span>
+<h3 class="text-base font-bold text-on-surface">"Si una foto se envía en modo efímero (se borra en 5 seg), estoy seguro"</h3>
+<p class="text-xs text-on-surface-variant italic">
+              "La aplicación no deja tomar captura de pantalla, así que nadie puede guardarla."
+            </p>
+</div>
+<div class="p-3 bg-accent-salmon-light rounded-xl flex flex-col gap-1 border border-secondary/20">
+<span class="text-xs font-bold text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">phonelink_lock</span> REALIDAD TECNOLÓGICA:
+            </span>
+<p class="text-xs text-on-surface leading-snug">
+<strong>Falsa seguridad.</strong> La otra persona puede usar un segundo teléfono o cámara para fotografiar la pantalla. Por eso, la regla de oro es <strong>nunca mostrar el rostro</strong> en fotos íntimas.
+            </p>
+</div>
+</div>
+<!-- Mito 5 -->
+<div class="myth-card bg-surface-container-lowest rounded-2xl p-space-md shadow-sm border border-border-subtle flex flex-col justify-between gap-space-md hover:border-primary transition-all">
+<div class="flex flex-col gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed text-[11px] self-start font-bold">
+              MITO #05
+            </span>
+<h3 class="text-base font-bold text-on-surface">"Los anticonceptivos engordan mucho y destruyen las hormonas"</h3>
+<p class="text-xs text-on-surface-variant italic">
+              "Tomar pastillas o ponerse el implante te arruina el metabolismo para siempre."
+            </p>
+</div>
+<div class="p-3 bg-accent-mint-light rounded-xl flex flex-col gap-1 border border-tertiary-fixed">
+<span class="text-xs font-bold text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">medication</span> REALIDAD CIENTÍFICA:
+            </span>
+<p class="text-xs text-on-surface leading-snug">
+<strong>Dosis ultra bajas modernas.</strong> Los métodos actuales tienen microdosis hormonales. Si un método causa retención de líquidos o molestias, un profesional de la salud puede cambiarte a otro que se adapte perfecto a tu cuerpo.
+            </p>
+</div>
+</div>
+<!-- Mito 6 -->
+<div class="myth-card bg-surface-container-lowest rounded-2xl p-space-md shadow-sm border border-border-subtle flex flex-col justify-between gap-space-md hover:border-primary transition-all">
+<div class="flex flex-col gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed text-[11px] self-start font-bold">
+              MITO #06
+            </span>
+<h3 class="text-base font-bold text-on-surface">"Si mi pareja se ve sana y aseada, no puede tener ninguna ITS"</h3>
+<p class="text-xs text-on-surface-variant italic">
+              "Las infecciones solo las tienen personas con heridas visibles o descuidadas."
+            </p>
+</div>
+<div class="p-3 bg-accent-salmon-light rounded-xl flex flex-col gap-1 border border-secondary/20">
+<span class="text-xs font-bold text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">health_and_safety</span> REALIDAD CIENTÍFICA:
+            </span>
+<p class="text-xs text-on-surface leading-snug">
+<strong>Más del 70% de las ITS son asintomáticas.</strong> El VPH, la Clamidia, el VIH y la Hepatitis B pueden no causar ningún síntoma durante años. Solo el preservativo de látex y los exámenes médicos previenen el contagio.
+            </p>
+</div>
+</div>
+</div>
+<!-- Quizz Micro-Interactivo -->
+<div class="bg-surface-container-low rounded-2xl p-space-lg md:p-space-xl shadow-sm border border-border-subtle flex flex-col gap-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[24px]">quiz</span>
+<h3 class="font-extrabold text-base text-on-surface">Mini Desafío de Autoevaluación</h3>
+</div>
+<p class="text-sm text-on-surface-variant">
+          Pregunta rápida: ¿La pastilla del día después (PAE) puede actuar como abortivo si el óvulo ya fue implantado en el útero materno?
+        </p>
+<div class="flex flex-wrap items-center gap-space-sm pt-1">
+<button class="px-5 py-2 rounded-full bg-surface-container-lowest text-on-surface text-xs font-bold shadow-sm hover:bg-surface-container-high transition-colors" onclick="checkQuizAnswer(true)">
+            Sí, es un método abortivo
+          </button>
+<button class="px-5 py-2 rounded-full bg-primary text-on-primary text-xs font-bold shadow-sm hover:brightness-110 active:scale-95 transition-all" onclick="checkQuizAnswer(false)">
+            No, solo previene la ovulación
+          </button>
+</div>
+<div class="hidden p-3 rounded-xl text-xs font-medium leading-relaxed" id="quizResultMsg"></div>
+</div>
+</section>
+</main>
+<!-- ======================================================== -->
+<!-- MODAL SOS FLOTANTE CON ASISTENCIA CONFIDENCIAL            -->
+<!-- ======================================================== -->
+<div class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4" id="modalSOS">
+<div class="bg-surface-container-lowest w-full max-w-lg rounded-2xl shadow-2xl p-space-lg md:p-space-xl flex flex-col gap-space-md relative border border-border-subtle animate-in fade-in zoom-in-95 duration-200">
+<!-- Botón de Cierre Superior -->
+<button class="absolute top-4 right-4 w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" onclick="closeModalSOS()" title="Cerrar modal">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+<!-- Encabezado del Modal -->
+<div class="flex items-center gap-space-sm text-secondary">
+<div class="w-11 h-11 rounded-full bg-secondary-fixed text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[26px]">emergency</span>
+</div>
+<div>
+<h3 class="font-extrabold text-base text-on-surface">Línea Confidencial &amp; Apoyo Inmediato</h3>
+<span class="text-xs text-secondary font-bold">100% Anónimo, Gratuito y Libre de Juicios</span>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+        Si te encuentras ante una sospecha de embarazo no planificado, requieres anticoncepción de emergencia (primeras 72h), o estás sufriendo acoso, chantaje o difusión indebida de fotos:
+      </p>
+<!-- Canales de Atención -->
+<div class="flex flex-col gap-space-xs text-xs">
+<div class="p-3 bg-accent-salmon-light rounded-xl flex items-center justify-between border border-secondary/20">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[22px]">call</span>
+<div class="flex flex-col">
+<span class="font-bold text-secondary text-sm">Línea Nacional 102</span>
+<span class="text-[11px] text-on-surface-variant">Atención telefónica gratuita 24/7 en Salud Sexual</span>
+</div>
+</div>
+<a class="px-4 py-1.5 rounded-full bg-secondary text-on-secondary text-xs font-bold hover:brightness-110 shrink-0" href="tel:102">
+            Llamar
+          </a>
+</div>
+<div class="p-3 bg-surface-container-low rounded-xl flex items-center justify-between border border-border-subtle">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[22px]">chat</span>
+<div class="flex flex-col">
+<span class="font-bold text-primary text-sm">Chat Juvenil Seguro</span>
+<span class="text-[11px] text-on-surface-variant">Orientación anónima por psicólogas y matronas</span>
+</div>
+</div>
+<button class="px-4 py-1.5 rounded-full bg-primary text-on-primary text-xs font-bold hover:brightness-110 shrink-0" onclick="toggleDemoChat()">
+            Abrir Chat
+          </button>
+</div>
+</div>
+<!-- Demo Chat Box -->
+<div class="hidden bg-surface-subtle p-3 rounded-xl flex flex-col gap-2 max-h-36 overflow-y-auto border border-border-subtle" id="demoChatBox">
+<div class="bg-surface-container-lowest p-2.5 rounded-xl text-xs text-on-surface self-start max-w-[90%] shadow-sm border border-border-subtle">
+          👋 Hola, estás en un canal seguro y confidencial. Nadie sabrá quién eres ni de dónde escribes. ¿En qué duda médica o legal te podemos orientar hoy?
+        </div>
+</div>
+<!-- Salida Rápida para Privacidad -->
+<div class="flex items-center justify-between pt-2 border-t border-border-subtle text-xs text-outline">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+<span>No guarda historial local</span>
+</span>
+<button class="underline text-secondary font-bold hover:text-on-secondary-container" onclick="quickExit()">
+          Salida Rápida (Cerrar pestaña)
+        </button>
+</div>
+</div>
+</div>
+<!-- ======================================================== -->
+<!-- PIE DE PÁGINA NAVEGABLE CON DATA-TAB                      -->
+<!-- ======================================================== -->
+<footer class="w-full bg-surface-container-low text-on-surface border-t border-border-subtle">
+<div class="max-w-[1240px] mx-auto px-gutter py-space-xl">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-xl pb-space-lg border-b border-border-subtle">
+<div class="md:col-span-2 flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</div>
+<span class="font-bold text-sm text-primary">Espacio Seguro, Gratuito y Confidencial</span>
+</div>
+<p class="text-xs text-on-surface-variant max-w-md leading-relaxed">
+            Plataforma juvenil de orientación médica y derechos sexuales y reproductivos. Toda consulta y navegación en este portal es 100% anónima y no almacena cookies ni registros en tu dispositivo sin tu consentimiento expreso.
+          </p>
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent-mint-light text-tertiary text-xs font-semibold">
+<span class="material-symbols-outlined text-[14px]">lock</span> 100% Anónimo
+            </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-primary text-xs font-semibold">
+<span class="material-symbols-outlined text-[14px]">medical_services</span> Aval Clínico
+            </span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-bold text-xs uppercase tracking-wider text-on-surface">Módulos de Salud</span>
+<ul class="flex flex-col gap-1.5 text-xs text-on-surface-variant">
+<li><button class="hover:text-primary transition-colors text-left" data-tab="embarazo" onclick="switchAppTab('embarazo')">Embarazo y Riesgos</button></li>
+<li><button class="hover:text-primary transition-colors text-left" data-tab="ciclos" onclick="switchAppTab('ciclos')">Ciclos Menstruales y Fisiología</button></li>
+<li><button class="hover:text-primary transition-colors text-left" data-tab="metodos" onclick="switchAppTab('metodos')">Métodos Anticonceptivos</button></li>
+<li><button class="hover:text-primary transition-colors text-left" data-tab="tecnologia" onclick="switchAppTab('tecnologia')">Tecnología y Sexting Seguro</button></li>
+<li><button class="hover:text-primary transition-colors text-left" data-tab="mitos" onclick="switchAppTab('mitos')">Mitos vs Realidades</button></li>
+</ul>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-bold text-xs uppercase tracking-wider text-on-surface">Atención de Urgencia</span>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+            Si estás en riesgo inmediato o necesitas anticoncepción de emergencia dentro de las primeras 72h:
+          </p>
+<div class="flex flex-col gap-1 pt-1">
+<span class="text-xs font-bold text-secondary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">call</span> Línea Nacional 102 (24/7 Gratuita)
+            </span>
+<span class="text-[11px] text-on-surface-variant">Orientación médica y contención psicológica</span>
+</div>
+</div>
+</div>
+<div class="pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm text-center md:text-left">
+<p class="text-[11px] text-on-surface-variant">
+          Aviso Médico: Este contenido es exclusivamente educativo e informativo. No sustituye la consulta médica especializada ni exámenes ginecológicos presenciales.
+        </p>
+<p class="text-[11px] text-outline shrink-0">
+          © 2025 Plataforma Embarazo y Adolescencia.
+        </p>
+</div>
+</div>
+</footer>
+<!-- ======================================================== -->
+<!-- JAVASCRIPT: CONTROL TOTAL DE TABS, CALCULADORA Y MODAL   -->
+<!-- ======================================================== -->
+<script>
+    // 1. SISTEMA CENTRAL DE PESTAÑAS (Interconecta Header, Sub-Barra y Footer)
+    function switchAppTab(targetTabId) {
+      // Ocultar todos los paneles
+      const panes = document.querySelectorAll('.tab-pane');
+      panes.forEach(pane => {
+        pane.classList.remove('tab-content-active');
+        pane.classList.add('hidden');
+      });
+      // Mostrar el panel seleccionado
+      const targetPane = document.getElementById('pane-' + targetTabId);
+      if (targetPane) {
+        targetPane.classList.remove('hidden');
+        targetPane.classList.add('tab-content-active');
+      }
+      // Actualizar estilo en botones del Header
+      const headerBtns = document.querySelectorAll('.header-tab-btn');
+      headerBtns.forEach(btn => {
+        if (btn.getAttribute('data-tab') === targetTabId) {
+          btn.classList.add('bg-primary', 'text-on-primary', 'font-bold', 'shadow-[0_2px_10px_rgba(77,46,167,0.25)]');
+          btn.classList.remove('text-on-surface-variant');
+        } else {
+          btn.classList.remove('bg-primary', 'text-on-primary', 'font-bold', 'shadow-[0_2px_10px_rgba(77,46,167,0.25)]');
+          btn.classList.add('text-on-surface-variant');
+        }
+      });
+      // Actualizar estilo en botones de la Sub-barra Sticky
+      const subBtns = document.querySelectorAll('.sub-tab-btn');
+      subBtns.forEach(btn => {
+        if (btn.getAttribute('data-tab') === targetTabId) {
+          btn.classList.add('bg-primary', 'text-on-primary', 'font-bold', 'shadow-sm');
+          btn.classList.remove('text-on-surface-variant');
+        } else {
+          btn.classList.remove('bg-primary', 'text-on-primary', 'font-bold', 'shadow-sm');
+          btn.classList.add('text-on-surface-variant');
+        }
+      });
+      // Desplazar suavemente hacia la vista activa
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    // 2. INTERACTIVIDAD MÓDULO "PROYECTO DE VIDA PRIMERO" (Tab 1)
+    function toggleGoalCard(button) {
+      const isSelected = button.getAttribute('data-selected') === 'true';
+      const radioIcon = button.querySelector('.radio-icon');
+      
+      if (isSelected) {
+        button.setAttribute('data-selected', 'false');
+        button.classList.remove('ring-2', 'ring-primary', 'bg-surface-subtle');
+        button.classList.add('bg-surface-container-lowest');
+        if (radioIcon) {
+          radioIcon.textContent = 'radio_button_unchecked';
+          radioIcon.classList.remove('text-primary');
+          radioIcon.classList.add('text-outline');
+        }
+      } else {
+        button.setAttribute('data-selected', 'true');
+        button.classList.remove('bg-surface-container-lowest');
+        button.classList.add('ring-2', 'ring-primary', 'bg-surface-subtle');
+        if (radioIcon) {
+          radioIcon.textContent = 'check_circle';
+          radioIcon.classList.remove('text-outline');
+          radioIcon.classList.add('text-primary');
+        }
+      }
+      const selectedCount = document.querySelectorAll('.goal-card[data-selected="true"]').length;
+      const feedbackBox = document.getElementById('goalFeedback');
+      const feedbackTitle = document.getElementById('goalFeedbackTitle');
+      const feedbackText = document.getElementById('goalFeedbackText');
+      if (feedbackBox) {
+        if (selectedCount > 0) {
+          feedbackBox.classList.remove('hidden');
+          feedbackBox.classList.add('flex');
+          feedbackTitle.textContent = `¡Has priorizado ${selectedCount} meta${selectedCount > 1 ? 's' : ''} fundamental${selectedCount > 1 ? 'es' : ''}!`;
+          feedbackText.textContent = `Tus aspiraciones personales requieren tiempo, libertad y salud. Postergar un embarazo te permite culminar cada una de estas metas con total tranquilidad.`;
+        } else {
+          feedbackBox.classList.add('hidden');
+          feedbackBox.classList.remove('flex');
+        }
+      }
+    }
+    // 3. CALCULADORA DINÁMICA DE CICLO MENSTRUAL (Tab 2)
+    function runCycleCalculation() {
+      const dateInput = document.getElementById('calcStartDate');
+      const lenInput = document.getElementById('calcCycleLength');
+      if (!dateInput.value) return;
+      const startDate = new Date(dateInput.value + 'T00:00:00');
+      const cycleDays = parseInt(lenInput.value, 10);
+      // Próximo periodo: fecha de inicio + duración del ciclo
+      const nextPeriod = new Date(startDate);
+      nextPeriod.setDate(nextPeriod.getDate() + cycleDays);
+      // Ovulación estimada: próximo periodo - 14 días
+      const ovulation = new Date(nextPeriod);
+      ovulation.setDate(ovulation.getDate() - 14);
+      // Ventana fértil: ovulación - 5 días hasta ovulación + 1 día
+      const fertileStart = new Date(ovulation);
+      fertileStart.setDate(fertileStart.getDate() - 5);
+      const fertileEnd = new Date(ovulation);
+      fertileEnd.setDate(fertileEnd.getDate() + 1);
+      const options = { day: 'numeric', month: 'long', year: 'numeric' };
+      document.getElementById('outputNextPeriod').textContent = nextPeriod.toLocaleDateString('es-ES', options);
+      document.getElementById('outputOvulation').textContent = ovulation.toLocaleDateString('es-ES', options);
+      document.getElementById('outputFertileWindow').textContent = `Del ${fertileStart.toLocaleDateString('es-ES', { day: 'numeric', month: 'short' })} al ${fertileEnd.toLocaleDateString('es-ES', { day: 'numeric', month: 'short', year: 'numeric' })}`;
+    }
+    // 4. FILTRADO DINÁMICO DE MÉTODOS ANTICONCEPTIVOS (Tab 3)
+    function filterMethods(category, activeBtn) {
+      const cards = document.querySelectorAll('.method-card');
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      filterBtns.forEach(btn => {
+        btn.classList.remove('bg-primary', 'text-on-primary', 'font-bold', 'shadow-sm');
+        btn.classList.add('bg-surface-container-lowest', 'text-on-surface-variant');
+      });
+      activeBtn.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant');
+      activeBtn.classList.add('bg-primary', 'text-on-primary', 'font-bold', 'shadow-sm');
+      cards.forEach(card => {
+        const cardCat = card.getAttribute('data-category');
+        if (category === 'all' || cardCat === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+    // 5. MINI QUIZ INTERACTIVO (Tab 5)
+    function checkQuizAnswer(isAbortion) {
+      const msgBox = document.getElementById('quizResultMsg');
+      msgBox.classList.remove('hidden', 'bg-accent-salmon-light', 'text-secondary', 'border-secondary/20', 'bg-accent-mint-light', 'text-tertiary', 'border-tertiary-fixed');
+      
+      if (isAbortion) {
+        msgBox.classList.add('bg-accent-salmon-light', 'text-secondary', 'border', 'border-secondary/20');
+        msgBox.innerHTML = '<strong>Incorrecto:</strong> La pastilla de emergencia (PAE) NO es abortiva. Si un óvulo ya fue fecundado e implantado en la pared uterina, la píldora no surte efecto ni daña el embarazo.';
+      } else {
+        msgBox.classList.add('bg-accent-mint-light', 'text-tertiary', 'border', 'border-tertiary-fixed');
+        msgBox.innerHTML = '<strong>¡Exacto y Correcto!</strong> La PAE retrasa la ovulación para que ningún óvulo se encuentre con espermatozoides. No interrumpe un embarazo que ya se haya implantado.';
+      }
+    }
+    // 6. CONTROL DEL MODAL SOS & CHAT CONFIDENCIAL
+    function openModalSOS() {
+      const modal = document.getElementById('modalSOS');
+      if (modal) modal.classList.remove('hidden');
+    }
+    function closeModalSOS() {
+      const modal = document.getElementById('modalSOS');
+      if (modal) modal.classList.add('hidden');
+    }
+    function toggleDemoChat() {
+      const chat = document.getElementById('demoChatBox');
+      if (chat) chat.classList.toggle('hidden');
+    }
+    function quickExit() {
+      window.location.href = "https://www.google.com";
+    }
+    // Inicializar cálculo inicial en la carga
+    document.addEventListener('DOMContentLoaded', () => {
+      runCycleCalculation();
+    });
+  </script>
+</body></html>
